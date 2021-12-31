@@ -1,12 +1,12 @@
-function currentDate(Date) {
-  let now = new Date();
-  let hours = now.getHours;
+function currentDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
   console.log(hours);
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = now.getMinutes;
-  if (minutes > 10) {
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   let days = [
@@ -19,9 +19,9 @@ function currentDate(Date) {
     "Saturday",
   ];
   let day = days[now.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `Last updated: ${day} ${hours}:${minutes}`;
 }
-currentDate(Date);
+
 function showTemperature(response) {
   console.log(response.data);
   let tempElement = document.querySelector("#current-temp");
@@ -36,6 +36,8 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  let dateElement = document.querySelector("#date-time");
+  dateElement.innerHTML = currentDate(response.data.dt * 1000);
 }
 
 let apiKey = "f4f7afef9c2df741d794fbe9111a24ca";
