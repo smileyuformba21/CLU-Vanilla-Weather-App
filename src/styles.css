@@ -1,4 +1,5 @@
 .container {
+  text-transform: capitalize;
 }
 h1 {
   margin-bottom: 0;
