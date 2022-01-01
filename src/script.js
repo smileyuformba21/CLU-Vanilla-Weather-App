@@ -40,7 +40,19 @@ function showTemperature(response) {
   dateElement.innerHTML = currentDate(response.data.dt * 1000);
 }
 
-let apiKey = "f4f7afef9c2df741d794fbe9111a24ca";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
+function citySearch(city) {
+  let apiKey = "f4f7afef9c2df741d794fbe9111a24ca";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input");
+
+  citySearch(city.value);
+}
+citySearch("london");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
