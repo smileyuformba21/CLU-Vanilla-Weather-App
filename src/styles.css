@@ -15,15 +15,21 @@ h1 {
   border-radius: 10px;
   box-shadow: 5px 5px rgba(144, 182, 226, 0.7);
 }
-li {
-  list-style: none;
+.weather-temperature img {
+  height: 64px;
+  margin-right: 10px;
+  width: 64px;
 }
-.temp {
+.weather-temperature strong {
   font-size: 64px;
-  line-height: 90px;
+  font-weight: 400;
+  line-height: 64px;
 }
-.unit {
+.weather-temperature span {
   position: relative;
   font-size: 14px;
-  top: -20px;
+  top: -30px;
+}
+li {
+  list-style: none;
 }

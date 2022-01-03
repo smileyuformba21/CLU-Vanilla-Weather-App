@@ -43,6 +43,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celciusTemp = response.data.main.temp;
 }
 
 function citySearch(city) {
@@ -61,3 +63,22 @@ function handleSubmit(event) {
 citySearch("london");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+function toFahr(event) {
+  event.preventDefault();
+  let fahrTemp = (celciusTemp * 9) / 5 + 32;
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(fahrTemp);
+}
+function toCelcius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+let fahrChange = document.querySelector("#fahr-link");
+fahrChange.addEventListener("click", toFahr);
+
+let celciusChange = document.querySelector("#celcius-link");
+celciusChange.addEventListener("click", toCelcius);
