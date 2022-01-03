@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script
+      src="https://kit.fontawesome.com/7064e552b7.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,7 +22,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form action="search" class="col-mb-2" id="search-form">
+          <form action="search" class="mb-3" id="search-form">
             <div class="row">
               <div class="col-9">
                 <input
@@ -40,13 +43,28 @@
             </div>
           </form>
           <h1 id="city">London</h1>
-          <h2 id="date-time">Thursday 09.00</h2>
+          <p id="date-time">Thursday 09.00</p>
           <div class="row">
             <div class="col-6">
               <div class="col-md-6">
-                <strong class="temp" id="current-temp">14</strong>
-                <span class="unit">°C|°F </span> <br />
-                <span id="description">cloudy</span>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="cloudy"
+                  class="float-left"
+                  id="icon"
+                />
+                
+                  <strong class="temp" id="current-temp">14</strong>
+                  <span class="unit"
+                    >°<a href="#" id="celcius-link">C</a>|°<a
+                      href="#"
+                      id="fahr-link"
+                      >F</a
+                    >
+                  </span>
+                  <br />
+                  <span id="description">cloudy</span>
+                
               </div>
             </div>
             <div class="col-6">

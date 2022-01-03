@@ -38,6 +38,11 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   let dateElement = document.querySelector("#date-time");
   dateElement.innerHTML = currentDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function citySearch(city) {
