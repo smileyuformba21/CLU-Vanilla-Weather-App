@@ -21,6 +21,30 @@ function currentDate(timestamp) {
   let day = days[now.getDay()];
   return `Last updated: ${day} ${hours}:${minutes}`;
 }
+function showForecast() {
+  let foreCastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+                <div class="forecast-date">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt=""
+                  width="40px"
+                />
+                <div class="forecast-temp" id="forecast-temp">
+                  <span class="forecast-max">18</span>
+                  <span class="forecase-min">12</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  foreCastElement.innerHTML = forecastHTML;
+}
 
 function showTemperature(response) {
   console.log(response.data);
@@ -45,6 +69,7 @@ function showTemperature(response) {
   );
 
   celciusTemp = response.data.main.temp;
+  showForecast();
 }
 
 function citySearch(city) {

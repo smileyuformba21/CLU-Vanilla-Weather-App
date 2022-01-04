@@ -33,12 +33,15 @@ h1 {
 li {
   list-style: none;
 }
+.weather-forcast {
+  color: #000;
+}
 .forecast-date {
   font-size: 20px;
+  opacity: 0.6;
 }
 .forecast-max {
-  color: rgba(0, 0, 0, 0.9);
 }
 .forecast-min {
-  color: rbga(0, 0, 0, 0.4);
+  opacity: 0.4;
 }
