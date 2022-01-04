@@ -51,10 +51,10 @@ function showForecast(response) {
                 <div class="forecast-temp" id="forecast-temp">
                   <span class="forecast-max">${Math.round(
                     foreCastDay.temp.max
-                  )}</span>
+                  )}°</span>
                   <span class="forecast-min">${Math.round(
                     foreCastDay.temp.min
-                  )}</span>
+                  )}°</span>
               </div>
             </div>`;
     }
@@ -115,12 +115,6 @@ citySearch("london");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function toFahr(event) {
-  event.preventDefault();
-  let fahrTemp = (celciusTemp * 9) / 5 + 32;
-  let tempElement = document.querySelector("#current-temp");
-  tempElement.innerHTML = Math.round(fahrTemp);
-}
 function toCelcius(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#current-temp");
@@ -128,8 +122,6 @@ function toCelcius(event) {
 }
 
 let celciusTemp = null;
-let fahrChange = document.querySelector("#fahr-link");
-fahrChange.addEventListener("click", toFahr);
 
 let celciusChange = document.querySelector("#celcius-link");
 celciusChange.addEventListener("click", toCelcius);
