@@ -1,3 +1,6 @@
+body {
+  background-image: url("images/clouds1.jpg");
+}
 .container {
   text-transform: capitalize;
 }
@@ -5,7 +8,7 @@ h1 {
   margin-bottom: 0;
 }
 .weather-app-wrapper {
-  max-width: 800px;
+  max-width: 700px;
   margin: 20px auto;
 }
 .weather-app {
@@ -14,12 +17,21 @@ h1 {
   border: 2px solid grey;
   border-radius: 10px;
   box-shadow: 5px 5px rgba(144, 182, 226, 0.7);
+  background: linear-gradient(
+    145deg,
+    rgba(132, 132, 224, 0.7),
+    rgba(86, 171, 204, 0.4),
+    rgba(174, 180, 207, 0.8) 20%
+  );
+  background-size: cover;
 }
+
 .weather-temperature img {
   height: 64px;
   margin-right: 10px;
   width: 64px;
 }
+
 .weather-temperature strong {
   font-size: 64px;
   font-weight: 400;
@@ -27,21 +39,24 @@ h1 {
 }
 .weather-temperature span {
   position: relative;
-  font-size: 14px;
+  font-size: 12px;
   top: -30px;
 }
 li {
   list-style: none;
+  text-align: right;
 }
-.weather-forcast {
+.weather-forecast {
   color: #000;
+  margin-top: 20px;
+  padding: 10px auto;
 }
-.forecast-date {
+.weather-forcast .forecast-date {
   font-size: 20px;
   opacity: 0.6;
 }
 .forecast-max {
 }
 .forecast-min {
-  opacity: 0.4;
+  opacity: 0.6;
 }
