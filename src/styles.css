@@ -33,3 +33,12 @@ h1 {
 li {
   list-style: none;
 }
+.forecast-date {
+  font-size: 20px;
+}
+.forecast-max {
+  color: rgba(0, 0, 0, 0.9);
+}
+.forecast-min {
+  color: rbga(0, 0, 0, 0.4);
+}
